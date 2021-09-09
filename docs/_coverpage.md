@@ -1,6 +1,6 @@
 ![logo](_media/star.svg)
 
-## 我的博客
+## MCA
 
-[GitHub](<https://github.com/txazo/blog>)
+[GitHub](<https://github.com/txazoc/mca>)
 <a href="http://www.txazo.com/mca/#/homepage">开始阅读</a>

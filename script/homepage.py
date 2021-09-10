@@ -6,12 +6,16 @@ import sys
 import re
 import shutil
 
+# 源目录_docs
 sourceDir = os.getcwd() + '/_docs'
+# 目标目录docs
 destDir = os.getcwd() + '/docs'
 encoding = sys.getfilesystemencoding()
 regex_image = '!\[(.*)\]\((.*)\)\((.*)\)'
+# 模块数量
 muduleNum = 2
 
+# 模块
 class Module:
     def __init__(self, srcPath, destPath, fileName, moduleName):
         self.srcPath = srcPath
@@ -19,6 +23,7 @@ class Module:
         self.fileName = fileName
         self.moduleName = moduleName
 
+# markdown文件
 class Md:
     def __init__(self, srcPath, destPath, fileName, mdName, module):
         self.srcPath = srcPath
@@ -51,9 +56,11 @@ def buildHomepage(localDebug):
                 writeLine(f, '* ' + '[' + encode(pair[0]) + '](' + encode(module.fileName) + '/' + encode(md) + ')')
         writeLine(f, '')
 
+    # 本地debug，return
     if localDebug == 'true':
         return
 
+    # 重写md
     for moduleIndex, module in enumerate(modules):
         if not os.path.exists(module.destPath):
             os.mkdir(module.destPath)
@@ -62,6 +69,7 @@ def buildHomepage(localDebug):
             nextMd = getNextMd(moduleIndex, mdIndex, module.mds, modules)
             copyAndRewrite(md.srcPath, md.destPath, prevMd, nextMd)
 
+    # 复制_media目录
     print '[python] copy media begin.'
     copyMedia(sourceDir + '/_media', destDir + '/_media')
     print '[python] copy media begin.'

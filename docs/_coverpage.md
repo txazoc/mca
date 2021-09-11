@@ -1,4 +1,4 @@
-![logo](_media/star.svg)
+![logo](_media/logo.svg)
 
 # MCA
 

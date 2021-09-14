@@ -13,7 +13,7 @@ destDir = os.getcwd() + '/docs'
 encoding = sys.getfilesystemencoding()
 regex_image = '!\[(.*)\]\((.*)\)\((.*)\)'
 # 模块数量
-muduleNum = 3
+muduleNum = 4
 
 # 模块
 class Module:
